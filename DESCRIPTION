@@ -3,7 +3,15 @@ Type: Package
 Title: Two optimization algorithms for Kmeans and Multi-class logistic regression
 Version: 1.0
 Date: 2024-10-28
-Author: Who wrote it
+Authors@R: 
+    c(person(given = "Youthy",
+             family = "Wang",
+             role = c("aut","cre"),
+             email = "youthywang@tamu.edu"),
+      person(given = "Yunhe",
+             family = "Liu",
+             role = c("aut"),
+             email = "yunhe.liu@tamu.edu"))
 Maintainer: Who to complain to <yourfault@somewhere.net>
 Description: More about what it does (maybe more than one line)
 License: What license is it under?
