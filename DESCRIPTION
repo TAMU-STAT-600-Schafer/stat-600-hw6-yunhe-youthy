@@ -12,7 +12,7 @@ Authors@R:
              family = "Liu",
              role = c("aut"),
              email = "yunhe.liu@tamu.edu"))
-Maintainer: Who to complain to <yourfault@somewhere.net>
+Maintainer: Yunhe Liu <yunhe.liu@tamu.edu>
 Description: More about what it does (maybe more than one line)
 License: What license is it under?
 Imports: Rcpp (>= 1.0.5)
