@@ -1,7 +1,7 @@
 Package: GroupHW
 Type: Package
-Title: Two optimization algorithms for Kmeans and Multi-class logistic regression
-Version: 1.0
+Title: Coordinate Descents for Kmeans and Newton Methods for Multi-class Logistic Regression
+Version: 1.0.0
 Date: 2024-10-28
 Authors@R: 
     c(person(given = "Youthy",
@@ -13,11 +13,11 @@ Authors@R:
              role = c("aut"),
              email = "yunhe.liu@tamu.edu"))
 Maintainer: Yunhe Liu <yunhe.liu@tamu.edu>
-Description: We follow the mathamtical theory behind the Kemans Multi-class logistic regression 
-to write the optimized R code embedded with Rcpp code. The two algorithms are now faster than 
-the previous R functions.
+Description: We follow the mathemtical theory behind the Kemans Multi-class logistic regression to write the optimized R code embedded with Rcpp code. The two algorithms are now faster than the previous R functions.
 License: GPL (>= 3)
-Imports: Rcpp (>= 1.0.5)
+Imports: 
+    Rcpp (>= 1.0.5),
+    RcppArmadillo
 LinkingTo: Rcpp, RcppArmadillo
 RoxygenNote: 7.1.1
 Encoding: UTF-8
