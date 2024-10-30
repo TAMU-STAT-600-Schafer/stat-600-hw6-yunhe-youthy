@@ -13,11 +13,11 @@ Authors@R:
              role = c("aut"),
              email = "yunhe.liu@tamu.edu"))
 Maintainer: Yunhe Liu <yunhe.liu@tamu.edu>
-Description: We follow the mathemtical theory behind the Kemans Multi-class logistic regression to write the optimized R code embedded with Rcpp code. The two algorithms are now faster than the previous R functions.
+Description: We follow the mathematical theory behind Kmeans and Multi-class logistic regression to write optimized R code embedded with Rcpp. The two algorithms are now faster than previous R functions.
 License: GPL (>= 3)
 Imports: 
-    Rcpp (>= 1.0.5),
-    RcppArmadillo
+    Rcpp
 LinkingTo: Rcpp, RcppArmadillo
-RoxygenNote: 7.1.1
+RoxygenNote: 7.3.2
 Encoding: UTF-8
+
