@@ -28,6 +28,31 @@ MyKmeans <- function(X, K, M = NULL, numIter = 100){
   
   n = nrow(X) # number of rows in X
   
+  # Check if K is numeric and an integer
+  if (K != as.integer(K)) {
+    stop("The input data K is not numeric or integer.")
+  }
+  
+  # Check if X is NULL
+  if (is.null(X)) {
+    stop("The input data matrix X is NULL.")
+  }
+  X <- as.matrix(X)    #Convert the data structure of X into matrix
+  colnames(X) <- NULL  #Delete the column names from the original data
+  # Check if X is empty
+  if (nrow(X) == 0 || ncol(X) == 0) {
+    stop("The input data matrix X is empty.")
+  }
+  # Check if the number of data points is less than the number of clusters
+  if (nrow(X) < K) {
+    stop("Number of data points is less than the number of clusters.")
+  }
+  # Check if X has NA values
+  if (any(is.na(X))) {
+    stop("The input data X has NA values.")
+  }
+  p <- ncol(X)  # Number of features/Dimension of data points
+  
   # Check whether M is NULL or not. If NULL, initialize based on K random points from X. If not NULL, check for compatibility with X dimensions.
   if (is.null(M)) {
     # Initialization: randomly choose K rows as centers
