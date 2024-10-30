@@ -2,29 +2,43 @@
 % Please edit documentation in R/LR_wrapper.R
 \name{LRMultiClass}
 \alias{LRMultiClass}
-\title{Title}
+\title{Multi-class logistic regression Algorithm}
 \usage{
 LRMultiClass(X, y, numIter = 50, eta = 0.1, lambda = 1, beta_init = NULL)
 }
 \arguments{
-\item{X}{}
+\item{X}{A matrix with samples stored in rows (dim: \code{n * p}), 1st column should be 1s to account for intercept}
 
-\item{y}{}
+\item{y}{A vector of size n of class labels, from 0 to K-1}
 
-\item{numIter}{}
+\item{numIter}{Number of FIXED iterations of the algorithm, default value is 50}
 
-\item{eta}{}
+\item{eta}{Learning rate, default value is 0.1}
 
-\item{lambda}{}
+\item{lambda}{Ridge parameter, default value is 1}
 
-\item{beta_init}{}
+\item{beta_init}{Initial starting values of beta for the algorithm, should be p x K matrix}
 }
 \value{
-
+a list includes the: beta - p x K matrix of estimated beta values after numIter iterations
+and objective - (numIter + 1) length vector of objective values of the function that we are minimizing at each iteration (+ starting value)
 }
 \description{
-Title
+Multi-class logistic regression Algorithm
 }
 \examples{
-# Give example
+# Multi-class logistic regression Algorithm Implementation Example.1
+set.seed(123)
+X <- cbind(1, matrix(rnorm(500), 100, 5))
+Y <- sample(0:4, 100, replace = TRUE)
+LRMultiClass(X, Y, numIter = 50, eta = 0.1, lambda = 1)
+
+# Multi-class logistic regression Algorithm Implementation Example.2
+set.seed(456)
+n <- 100
+X1 <- cbind(1, matrix(rnorm(n*2, mean = 0, sd = 1), n, 2))
+X2 <- cbind(1, matrix(rnorm(n*2, mean = 2, sd = 1), n, 2))
+X <- rbind(X1, X2)
+Y <- c(rep(0, n), rep(1, n))
+LRMultiClass(X, Y, numIter = 50, eta = 0.1, lambda = 1)
 }
