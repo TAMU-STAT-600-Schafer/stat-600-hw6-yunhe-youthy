@@ -8,21 +8,18 @@
 #'
 #' @return A vector with integers from \code{1} to \code{K}, representing the cluster each sample belongs to.
 #' 
-#' @examples
-#' data1 <- matrix(
-#' c(1.0, 2.0,
-#'   1.5, 1.8,
-#'   5.0, 8.0,
-#'   8.0, 8.0,
-#'   1.0, 0.5,
-#'   9.0, 7.0), 
-#' nrow = 6,  
-#' byrow = TRUE,  
-#' dimnames = list(NULL, c("Feature1", "Feature2")))
-#' 
-#' kmeans_res <- MyKmeans(X = data1, K = 2)
-#' 
 #' @export
+#' 
+#' @examples
+#' # Kmeans Algorithm Implementation Example.1
+#' set.seed(123)
+#' X1 <- matrix(rnorm(100), nrow = 20)
+#' MyKmeans(X1, K = 3)
+#' 
+#' # Kmeans Algorithm Implementation Example.2
+#' set.seed(456)
+#' X2 <- matrix(rnorm(100), nrow = 20)
+#' MyKmeans(X2, K = 3)
 MyKmeans <- function(X, K, M = NULL, numIter = 100){
   
   n = nrow(X) # number of rows in X
