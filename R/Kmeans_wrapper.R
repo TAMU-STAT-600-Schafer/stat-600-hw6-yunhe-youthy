@@ -68,8 +68,3 @@ MyKmeans <- function(X, K, M = NULL, numIter = 100){
   return(Y)
 }
 
-RandomSelection <- function(X, K, n) {
-  rchoice <- sample(n, K, replace=FALSE) 
-  M <- X[rchoice, ]
-  return(M)
-}
