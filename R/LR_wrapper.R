@@ -18,6 +18,35 @@
 LRMultiClass <- function(X, y, numIter = 50, eta = 0.1, lambda = 1, beta_init = NULL){
   
   # Compatibility checks from HW3 and initialization of beta_init
+  #Define the variables' dimension
+  n = nrow(X)
+  p = ncol(X)
+  K = length(unique(y)) 
+  
+  if (!all(X[, 1] == 1)) {
+    stop("First column of X should be 1s.") 
+  }
+  # Check for compatibility of dimensions between X and Y
+  if (length(y) != n) {
+    stop("The number of rows of X should be the same as the length of y.") 
+  }
+  # Check eta is positive
+  if (eta <= 0) {
+    stop("The learning rate eta should be positive.")
+  }
+  # Check lambda is non-negative
+  if (lambda < 0) {
+    stop("The ridge parameter lambda should be non-negative.")
+  }
+  # Check whether beta_init is NULL. If NULL, initialize beta with p x K matrix of zeroes. If not NULL, check for compatibility of dimensions with what has been already supplied.
+  if (is.null(beta_init)) {
+    beta <- matrix(0, p, K)
+  } else {
+    if (nrow(beta_init) != p | ncol(beta_init) != K) {
+      stop("The dimensions of beta_init supplied are not correct.")
+    }
+    beta <- beta_init
+  }
   
   
   # Call C++ LRMultiClass_c function to implement the algorithm
