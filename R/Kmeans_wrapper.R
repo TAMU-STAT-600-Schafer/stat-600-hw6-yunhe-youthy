@@ -63,6 +63,8 @@ MyKmeans <- function(X, K, M = NULL, numIter = 100){
   }
   M <- as.matrix(M)    #Convert the data structure of M into matrix
   
+  
+  ##Part B: Implement K-means algorithm
   # Call C++ MyKmeans_c function to implement the algorithm
   Y = MyKmeans_c(X, K, M, numIter)
   
