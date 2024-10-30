@@ -28,11 +28,11 @@ MyKmeans <- function(X, K, M = NULL, numIter = 100){
   
   n = nrow(X) # number of rows in X
   
+  ##Part A: Data checking and processing
   # Check if K is numeric and an integer
   if (K != as.integer(K)) {
     stop("The input data K is not numeric or integer.")
   }
-  
   # Check if X is NULL
   if (is.null(X)) {
     stop("The input data matrix X is NULL.")
