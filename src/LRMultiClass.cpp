@@ -8,6 +8,17 @@
 //
 // [[Rcpp::depends(RcppArmadillo)]]
 
+// Helper function to calculate probabilities
+arma::mat calc_probs(const arma::mat& X, const arma::mat& beta) {
+  arma::mat exp_Xbeta = exp(X * beta);
+  arma::rowvec row_sums = sum(exp_Xbeta, 1).t();
+  arma::mat probs = exp_Xbeta;
+  for(size_t i = 0; i < exp_Xbeta.n_rows; i++) {
+    probs.row(i) = exp_Xbeta.row(i) / row_sums(i);
+  }
+  return probs;
+}
+
 // For simplicity, no test data, only training data, and no error calculation.
 // X - n x p data matrix
 // y - n length vector of classes, from 0 to K-1
