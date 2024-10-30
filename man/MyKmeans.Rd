@@ -2,9 +2,7 @@
 % Please edit documentation in R/Kmeans_wrapper.R
 \name{MyKmeans}
 \alias{MyKmeans}
-\title{K-means Cluster with Coordinate Descent (E-M)
-
-This function takes n samples and compute K cluster centroids after given iterations.}
+\title{K-means Cluster with Coordinate Descent (E-M)}
 \usage{
 MyKmeans(X, K, M = NULL, numIter = 100)
 }
@@ -22,8 +20,6 @@ A vector with integers from \code{1} to \code{K}, representing the cluster each 
 }
 \description{
 K-means Cluster with Coordinate Descent (E-M)
-
-This function takes n samples and compute K cluster centroids after given iterations.
 }
 \examples{
 data1 <- matrix(
