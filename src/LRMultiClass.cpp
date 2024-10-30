@@ -19,6 +19,17 @@ arma::mat calc_probs(const arma::mat& X, const arma::mat& beta) {
   return probs;
 }
 
+// Helper function to calculate objective
+double calc_objective(const arma::mat& X, const arma::uvec& y, double lambda, const arma::mat& beta) {
+  arma::mat P = calc_probs(X, beta);
+  double obj = 0;
+  for(size_t i = 0; i < X.n_rows; i++) {
+    obj -= log(P(i, y(i)));
+  }
+  obj += 0.5 * lambda * accu(square(beta));
+  return obj;
+}
+
 // For simplicity, no test data, only training data, and no error calculation.
 // X - n x p data matrix
 // y - n length vector of classes, from 0 to K-1
