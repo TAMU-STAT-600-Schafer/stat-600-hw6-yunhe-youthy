@@ -1,5 +1,5 @@
 
-#' Title Multi-class logistic regression Algorithm
+#' @title Multi-class logistic regression Algorithm
 #'
 #' @param X A matrix with samples stored in rows (dim: \code{n * p}), 1st column should be 1s to account for intercept
 #' @param y A vector of size n of class labels, from 0 to K-1
