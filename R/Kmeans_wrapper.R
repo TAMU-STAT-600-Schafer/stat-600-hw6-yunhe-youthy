@@ -53,13 +53,15 @@ MyKmeans <- function(X, K, M = NULL, numIter = 100){
   }
   p <- ncol(X)  # Number of features/Dimension of data points
   
-  # Check whether M is NULL or not. If NULL, initialize based on K random points from X. If not NULL, check for compatibility with X dimensions.
+  # Check whether M is NULL or not and compatibility with X dimensions and K
   if (is.null(M)) {
-    # Initialization: randomly choose K rows as centers
-    M <- RandomSelection(X, K, n)
-  } else {
-    if (!identical(ncol(X), ncol(M))) stop("ERROR: Incompatible dimensions!")
+    # If NULL, initialize based on K randomly selected points from X.
+    M <- X[sample(1:n, K), , drop = FALSE]
+  } else if (nrow(M) != K || ncol(M) != p) {
+    # If not NULL, check for compatibility with X dimensions.
+    stop("Dimension mismatch between M and X.")
   }
+  M <- as.matrix(M)    #Convert the data structure of M into matrix
   
   # Call C++ MyKmeans_c function to implement the algorithm
   Y = MyKmeans_c(X, K, M, numIter)
