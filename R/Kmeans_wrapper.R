@@ -66,7 +66,7 @@ MyKmeans <- function(X, K, M = NULL, numIter = 100){
   
   ##Part B: Implement K-means algorithm
   # Call C++ MyKmeans_c function to implement the algorithm
-  Y = MyKmeans_c(X, K, M, numIter)
+  Y = MyKmeans_c(X = X, K = K, M = M, numIter = numIter)
   
   # Return the class assignments
   return(Y)
