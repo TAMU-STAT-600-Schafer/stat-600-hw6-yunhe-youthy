@@ -1,6 +1,8 @@
-
-#' @title K-means Cluster with Coordinate Descent (E-M)
+#' @title K-means Cluster with Coordinate Descent
 #'
+#' @description
+#' This function takes n samples and compute K cluster centroids after given iterations.
+#' 
 #' @param X A matrix with samples stored in rows (dim: \code{n * p}). 
 #' @param K An integer representing the number of cluster.
 #' @param M A matrix with initial centroids stored in rows (dim: \code{K * p}, optional).
