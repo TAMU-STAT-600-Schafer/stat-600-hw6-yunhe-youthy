@@ -18,7 +18,7 @@
 #' set.seed(123)
 #' X <- cbind(1, matrix(rnorm(500), 100, 5))
 #' Y <- sample(0:4, 100, replace = TRUE)
-#' LRMultiClass(X, Y, numIter = 50, eta = 0.1, lambda = 1)
+#' LRMultiClass(X = X, y = Y, numIter = 50, eta = 0.1, lambda = 1)
 #' 
 #' # Multi-class logistic regression Algorithm Implementation Example.2
 #' set.seed(456)
@@ -27,7 +27,7 @@
 #' X2 <- cbind(1, matrix(rnorm(n*2, mean = 2, sd = 1), n, 2))
 #' X <- rbind(X1, X2)
 #' Y <- c(rep(0, n), rep(1, n))
-#' LRMultiClass(X, Y, numIter = 50, eta = 0.1, lambda = 1)
+#' LRMultiClass(X = X, y = Y, numIter = 50, eta = 0.1, lambda = 1)
 LRMultiClass <- function(X, y, numIter = 50, eta = 0.1, lambda = 1, beta_init = NULL){
   
   # Compatibility checks from HW3 and initialization of beta_init
