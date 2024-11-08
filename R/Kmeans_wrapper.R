@@ -23,6 +23,11 @@
 #' X1 <- matrix(rnorm(100), nrow = 20)
 #' MyKmeans(X = X1, K = 3)
 #' 
+#' # Kmeans Algorithm Implementation Example.2
+#' set.seed(456)
+#' X2 <- matrix(rnorm(100), nrow = 20)
+#' MyKmeans(X = X2, K = 3)
+
 MyKmeans <- function(X, K, M = NULL, numIter = 100){
   
   n = nrow(X) # number of rows in X
