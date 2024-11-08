@@ -1,5 +1,13 @@
 #' @title K-means Cluster with Coordinate Descent
 #' 
+#' @description
+#' A function that performs K-means clustering to partition n data points into K clusters.
+#' For each iteration, it assigns each data point to its nearest centroid based on 
+#' Euclidean distance, then updates the cluster centroids by calculating the mean of 
+#' all points in each cluster. The process continues until either convergence is reached
+#' or the maximum number of iterations is met. The core computation is implemented in 
+#' C++ for efficiency.
+#' 
 #' @param X A matrix with samples stored in rows (dim: \code{n * p}). 
 #' @param K An integer representing the number of cluster.
 #' @param M A matrix with initial centroids stored in rows (dim: \code{K * p}, optional).
