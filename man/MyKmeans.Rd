@@ -19,7 +19,12 @@ MyKmeans(X, K, M = NULL, numIter = 100)
 A vector with integers from \code{1} to \code{K}, representing the cluster each sample belongs to.
 }
 \description{
-This function takes n samples and compute K cluster centroids after given iterations.
+A function that performs K-means clustering to partition n data points into K clusters.
+For each iteration, it assigns each data point to its nearest centroid based on 
+Euclidean distance, then updates the cluster centroids by calculating the mean of 
+all points in each cluster. The process continues until either convergence is reached
+or the maximum number of iterations is met. The core computation is implemented in 
+C++ for efficiency.
 }
 \examples{
 # Kmeans Algorithm Implementation Example.1
@@ -27,8 +32,4 @@ set.seed(123)
 X1 <- matrix(rnorm(100), nrow = 20)
 MyKmeans(X = X1, K = 3)
 
-# Kmeans Algorithm Implementation Example.2
-set.seed(456)
-X2 <- matrix(rnorm(100), nrow = 20)
-MyKmeans(X = X2, K = 3)
 }

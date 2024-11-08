@@ -24,7 +24,10 @@ a list includes the: beta - p x K matrix of estimated beta values after numIter 
 and objective - (numIter + 1) length vector of objective values of the function that we are minimizing at each iteration (+ starting value)
 }
 \description{
-Multi-class logistic regression Algorithm
+Implements multi-class logistic regression using damped Newton's method with ridge 
+regularization. The algorithm minimizes the negative log-likelihood with a ridge 
+penalty term, using gradient descent to iteratively update the coefficients. Core 
+computations are implemented in C++ for efficiency.
 }
 \examples{
 # Multi-class logistic regression Algorithm Implementation Example.1
@@ -33,12 +36,4 @@ X <- cbind(1, matrix(rnorm(500), 100, 5))
 Y <- sample(0:4, 100, replace = TRUE)
 LRMultiClass(X = X, y = Y, numIter = 50, eta = 0.1, lambda = 1)
 
-# Multi-class logistic regression Algorithm Implementation Example.2
-set.seed(456)
-n <- 100
-X1 <- cbind(1, matrix(rnorm(n*2, mean = 0, sd = 1), n, 2))
-X2 <- cbind(1, matrix(rnorm(n*2, mean = 2, sd = 1), n, 2))
-X <- rbind(X1, X2)
-Y <- c(rep(0, n), rep(1, n))
-LRMultiClass(X = X, y = Y, numIter = 50, eta = 0.1, lambda = 1)
 }
